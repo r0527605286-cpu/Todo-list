@@ -15,7 +15,10 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddDbContext<ToDoDbContext>();
 // שליפת מחרוזת החיבור מה-Environment Variables שהגדרנו ב-Render
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("ERROR: Connection string 'DefaultConnection' is null or empty! Check Render Environment Variables.");
+}
 builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
