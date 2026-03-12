@@ -57,11 +57,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //swgger-הפעלת ה
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 // ---  ניתובים (Routes) ---
 
