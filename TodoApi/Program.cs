@@ -12,7 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 // ---  רישום שירותים ---
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ToDoDbContext>();
+//builder.Services.AddDbContext<ToDoDbContext>();
+// שליפת מחרוזת החיבור מה-Environment Variables שהגדרנו ב-Render
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ToDoDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // --- הוספת שירותי אימות JWT ---
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
