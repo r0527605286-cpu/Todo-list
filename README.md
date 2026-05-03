@@ -1,60 +1,39 @@
-own
-# 🚀 Full-Stack Todo List Application
+# Full-Stack Todo List Application
 
-אפליקציית ניהול משימות מתקדמת הכוללת צד לקוח (Frontend) וצד שרת (Backend), המאפשרת ניהול משתמשים ומעקב אחר משימות בזמן אמת.
+A high-performance task management application featuring a dedicated Frontend and Backend, enabling user authentication and real-time task tracking.
 
-## 🏗️ ארכיטקטורת הפרויקט
+## Project Architecture
 
-הפרויקט מחולק לשני חלקים עיקריים:
+The project is structured into two main components:
 
-### 1. Frontend (צד לקוח) - `ToDoListReact`
-נבנה באמצעות **React.js**. 
-- **טכנולוגיות:** React Hooks, Axios, CSS3.
-- **תכונות:** ממשק משתמש אינטראקטיבי, תקשורת אסינכרונית מול השרת.
+### 1. Frontend - ToDoListReact
+Developed using React.js, focusing on a responsive and interactive user experience.
+* **Technologies:** React Hooks, Axios, CSS3.
+* **Key Features:** Interactive UI components and asynchronous server communication.
 
-### 2. Backend (צד שרת) - `TodoApi`
-נבנה באמצעות **ASP.NET Core (.NET)**.
-- **טכנולוגיות:** Entity Framework Core, MySQL Server.
-- **תכונות:** RESTful API מאובטח, ניהול בסיס נתונים, תמיכה ב-CORS וניהול משתמשים.
+### 2. Backend - TodoApi
+Developed using ASP.NET Core (.NET), providing a robust and secure server-side logic.
+* **Technologies:** Entity Framework Core, MySQL Server.
+* **Key Features:** Secure RESTful API, database management, CORS support, and user management.
 
----
+## Core Features
 
-## ✨ תכונות עיקריות
-- **ניהול משימות מלא (CRUD):** יצירה, קריאה, עדכון ומחיקה של משימות.
-- **מערכת משתמשים:** תמיכה בטבלאות משתמשים לשמירה אישית של נתונים.
-- **Persistence:** הנתונים נשמרים בבסיס נתונים SQL ולא נמחקים ברענון דף.
-- **Docker Ready:** הפרויקט כולל `Dockerfile` להרצה מהירה בסביבת קונטיינרים.
+* **Full CRUD Operations:** Create, Read, Update, and Delete tasks seamlessly.
+* **User System:** Support for user tables to ensure personal data persistence.
+* **Data Persistence:** Information is stored in a SQL database, ensuring data remains intact after page refreshes.
+* **Docker Support:** Includes a Dockerfile for rapid deployment in containerized environments.
 
----
+## Getting Started
 
-## 🚀 הוראות הרצה
+### Prerequisites
+* .NET 8 SDK or higher
+* Node.js and npm
+* MySQL Server
 
-### דרישות מוקדמות
-- .NET 8 SDK ומעלה
-- Node.js & npm
-- MySQL Server
-
-### הרצת השרת (Backend)
-1. כנס לתיקיית `TodoApi`.
-2. עדכן את מחרוזת ההתקשרות בקובץ `appsettings.json`.
-3. הרץ את הפקודות:
+### Backend Setup (TodoApi)
+1. Navigate to the `TodoApi` directory.
+2. Update the connection string in the `appsettings.json` file.
+3. Execute the following commands:
    ```bash
    dotnet ef database update
    dotnet run
-הרצת הלקוח (Frontend)
-כנס לתיקיית ToDoListReact.
-
-התקן חבילות: npm install.
-
-הרץ את האפליקציה: npm start.
-
-🛠️ טכנולוגיות בשימוש
-Client: React, Axios
-
-Server: .NET Core, Entity Framework
-
-Database: MySQL
-
-DevOps: Docker, .gitignore optimization
-
-נבנה על ידי Rivka
